@@ -1,0 +1,7 @@
+/* Copyright © 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
+package cn.zhuatech.modelgateway.service;import org.junit.jupiter.api.Test;import java.math.BigDecimal;import java.util.*;import static org.assertj.core.api.Assertions.assertThat;
+class ModelFailoverPolicyServiceTest{private final ModelFailoverPolicyService s=new ModelFailoverPolicyService();
+ @Test void retriesTransientFailureWithinBudget(){var r=s.decide(req(ModelFailoverPolicyService.FailureType.TIMEOUT,0,2,true,false));assertThat(r.decision()).isEqualTo(ModelFailoverPolicyService.Decision.RETRY_CURRENT);}
+ @Test void failsOverAfterRetries(){var r=s.decide(req(ModelFailoverPolicyService.FailureType.RATE_LIMIT,2,2,true,false));assertThat(r.decision()).isEqualTo(ModelFailoverPolicyService.Decision.FAILOVER);assertThat(r.selectedModel()).isEqualTo("backup");}
+ @Test void blocksSecurityOrAuthenticationBypass(){var r=s.decide(req(ModelFailoverPolicyService.FailureType.CONTENT_REJECTED,2,2,true,false));assertThat(r.decision()).isEqualTo(ModelFailoverPolicyService.Decision.BLOCKED);}
+ private ModelFailoverPolicyService.Request req(ModelFailoverPolicyService.FailureType f,int retry,int max,boolean idem,boolean streaming){var c=new ModelFailoverPolicyService.Candidate("backup","cn",Set.of("chat"),true,new BigDecimal("0.3"),new BigDecimal("0.9"));return new ModelFailoverPolicyService.Request("R","primary",f,retry,max,idem,streaming,"cn","chat",new BigDecimal("1"),List.of(c));}}

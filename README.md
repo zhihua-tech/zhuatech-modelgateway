@@ -30,3 +30,7 @@ docker compose up --build
 ## 许可
 
 本工程仅限个人非商业学习、研究和技术交流；企业使用、生产部署、SaaS、外包交付、咨询实施等商用行为必须取得上海如静知华信息科技有限公司书面授权，详见 [LICENSE](LICENSE)。商业模型接入与私有化部署请联系[知华科技](https://www.zhuatech.cn/)。
+
+## 有边界的模型故障转移
+
+新增 `POST /api/model-gateway/failover-policy`，区分超时、限流、服务故障、内容安全拒绝和认证错误；结合幂等性、流式输出状态、重试次数、数据驻留、能力、健康和预算，输出 `RETRY_CURRENT / FAILOVER / MANUAL / BLOCKED`，禁止通过切换模型绕过安全拒绝。
