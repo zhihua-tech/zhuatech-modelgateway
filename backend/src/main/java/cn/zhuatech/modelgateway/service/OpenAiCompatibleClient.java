@@ -1,10 +1,19 @@
 /* Copyright © 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.modelgateway.service;
 import org.springframework.beans.factory.annotation.Value;import org.springframework.http.client.JdkClientHttpRequestFactory;import org.springframework.stereotype.Component;import org.springframework.web.client.RestClient;import java.net.URI;import java.net.http.HttpClient;import java.time.Duration;import java.util.*;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Component
 public class OpenAiCompatibleClient{
  private final String apiKey;private final Set<String>allowedHosts;
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  public OpenAiCompatibleClient(@Value("${model.api-key:}")String apiKey,@Value("${model.allowed-hosts:}")String hosts){this.apiKey=apiKey;this.allowedHosts=new HashSet<>(Arrays.asList(hosts.split(",")));}
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  public String invoke(String baseUrl,String model,String prompt){
   URI uri=URI.create(baseUrl);if(!"https".equalsIgnoreCase(uri.getScheme())||!allowedHosts.contains(uri.getHost()))throw new IllegalArgumentException("模型端点未命中 HTTPS 主机白名单");
   if(apiKey.isBlank())throw new IllegalStateException("服务端尚未配置 MODEL_API_KEY");
