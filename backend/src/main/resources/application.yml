@@ -7,5 +7,10 @@ spring:
   password: ${DB_PASSWORD:zhuatech_dev_password}
  jpa: {open-in-view: false, hibernate: {ddl-auto: validate}}
  flyway: {enabled: true}
-app.security: {admin-password: ${APP_ADMIN_PASSWORD:zhuatech-demo-admin}, auditor-password: ${APP_AUDITOR_PASSWORD:zhuatech-demo-auditor}}
-model: {api-key: ${MODEL_API_KEY:}, allowed-hosts: ${MODEL_ALLOWED_HOSTS:api.deepseek.com,api.openai.com}}
+app:
+ security:
+  admin-password: ${APP_ADMIN_PASSWORD:zhuatech-demo-admin}
+  auditor-password: ${APP_AUDITOR_PASSWORD:zhuatech-demo-auditor}
+model:
+ api-key: ${MODEL_API_KEY:}
+ allowed-hosts: ${MODEL_ALLOWED_HOSTS:api.deepseek.com,api.openai.com}
