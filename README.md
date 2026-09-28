@@ -36,3 +36,11 @@ docker compose up --build
 ## 有边界的模型故障转移
 
 新增 `POST /api/model-gateway/failover-policy`，区分超时、限流、服务故障、内容安全拒绝和认证错误；结合幂等性、流式输出状态、重试次数、数据驻留、能力、健康和预算，输出 `RETRY_CURRENT / FAILOVER / MANUAL / BLOCKED`，禁止通过切换模型绕过安全拒绝。
+
+## 微信咨询
+
+商业授权、私有化部署或深度定制开发，可扫描下方二维码添加微信 `zhuatech` 或 `zhuatech2` 咨询。
+
+| 微信 zhuatech | 微信 zhuatech2 |
+| --- | --- |
+| ![知华科技微信咨询 zhuatech](docs/images/zhuatech-wechat-consulting.png) | ![知华科技微信咨询 zhuatech2](docs/images/zhuatech-wechat-consulting-2.png) |
