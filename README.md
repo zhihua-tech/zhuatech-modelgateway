@@ -1,5 +1,7 @@
 # ZhuaTech Model Gateway｜企业 AI 模型统一网关
 
+[简体中文](README.md) | [English](README.en.md)
+
 ZhuaTech Model Gateway 是 **[知华科技（上海如静知华信息科技有限公司）](https://www.zhuatech.cn/)** 面向多模型接入、成本治理和可靠性建设推出的社区源码项目。
 
 ## 不是“模型配置页面”，而是可工作的路由链
