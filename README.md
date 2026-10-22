@@ -1,5 +1,7 @@
 # ZhuaTech Model Gateway｜企业 AI 模型统一网关
 
+2026-10-23 功能更新：**上下文窗口预算编排**。先保留必需消息和输出预算，再按优先级纳入可选上下文；明确返回舍弃项和剩余 token。使用输入的 token 估算，不声称实现模型 tokenizer。 [接口、操作与边界说明](docs/AI_PRACTICAL_UPGRADE_20261023.md)。
+
 [简体中文](README.md) | [English](README.en.md)
 
 ZhuaTech Model Gateway 是 **[知华科技（上海如静知华信息科技有限公司）](https://www.zhuatech.cn/)** 面向多模型接入、成本治理和可靠性建设推出的社区源码项目。
