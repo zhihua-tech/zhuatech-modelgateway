@@ -1,0 +1,64 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "uncachedTokens": "#2000",
+      "estimatedCost": "#9.6"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "cachedTokens": "10001"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "budget": "9.59"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "budget": "9.6"
+    },
+    "expected": {
+      "decision": "PASS",
+      "budgetRemaining": "#0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "cachedTokens": "0"
+    },
+    "expected": {
+      "estimatedCost": "#16"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "requests": "0"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "inputTokens": "0",
+      "cachedTokens": "0",
+      "outputTokens": "0"
+    },
+    "expected": {
+      "estimatedCost": "#0"
+    },
+    "error": false
+  }
+]
