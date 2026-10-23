@@ -1,0 +1,75 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "uncachedTokens": "#2000",
+      "estimatedCost": "#9.6"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "uncachedTokens": "#2000",
+      "estimatedCost": "#9.6"
+    }
+  },
+  {
+    "patch": {
+      "budget": "9.59"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "uncachedTokens": "#2000",
+      "estimatedCost": "#9.6"
+    }
+  },
+  {
+    "patch": {
+      "budget": "9.6"
+    },
+    "expected": {
+      "decision": "PASS",
+      "budgetRemaining": "#0"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "uncachedTokens": "#2000",
+      "estimatedCost": "#9.6"
+    }
+  },
+  {
+    "patch": {
+      "cachedTokens": "0"
+    },
+    "expected": {
+      "estimatedCost": "#16"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "uncachedTokens": "#2000",
+      "estimatedCost": "#9.6"
+    }
+  },
+  {
+    "patch": {
+      "inputTokens": "0",
+      "cachedTokens": "0",
+      "outputTokens": "0"
+    },
+    "expected": {
+      "estimatedCost": "#0"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "uncachedTokens": "#2000",
+      "estimatedCost": "#9.6"
+    }
+  }
+]
